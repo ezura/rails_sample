@@ -1372,3 +1372,564 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-13 14:13:40
 
 Started GET "/websocket" for 127.0.0.1 at 2014-07-13 14:13:40 +0900
 call new_message: {"body"=>"hogehoge"}
+call new_message: {"body"=>"hogehoge"}
+call new_message: {"body"=>"hogehoge"}
+call new_message: {"body"=>"hogehoge"}
+call new_message: {"body"=>"hogehoge"}
+
+
+Started GET "/syncslide" for 127.0.0.1 at 2014-07-13 14:17:01 +0900
+Processing by SyncslideController#index as HTML
+  Rendered syncslide/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/syncslide.css?body=1" for 127.0.0.1 at 2014-07-13 14:17:01 +0900
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-13 14:17:01 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:01 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:01 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:01 +0900
+
+
+Started GET "/assets/syncslide.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:01 +0900
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:01 +0900
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:01 +0900
+
+
+Started GET "/assets/websocket_rails/abstract_connection.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:01 +0900
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:01 +0900
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:01 +0900
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:01 +0900
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:01 +0900
+
+
+Started GET "/assets/websocket_class.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:01 +0900
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:01 +0900
+
+
+Started GET "/websocket" for 127.0.0.1 at 2014-07-13 14:17:01 +0900
+call new_message: {"body"=>"hogehoge"}
+call new_message: {"body"=>"hogehoge"}
+
+
+Started GET "/syncslide" for 127.0.0.1 at 2014-07-13 14:17:36 +0900
+Processing by SyncslideController#index as HTML
+  Rendered syncslide/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 222ms (Views: 220.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/syncslide.css?body=1" for 127.0.0.1 at 2014-07-13 14:17:36 +0900
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-13 14:17:36 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:36 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:36 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:36 +0900
+
+
+Started GET "/assets/syncslide.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:36 +0900
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:36 +0900
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:36 +0900
+
+
+Started GET "/assets/websocket_rails/abstract_connection.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:36 +0900
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:36 +0900
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:36 +0900
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:36 +0900
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:36 +0900
+
+
+Started GET "/assets/websocket_class.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:36 +0900
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:36 +0900
+
+
+Started GET "/websocket" for 127.0.0.1 at 2014-07-13 14:17:36 +0900
+
+
+Started GET "/syncslide" for 127.0.0.1 at 2014-07-13 14:17:47 +0900
+Processing by SyncslideController#index as HTML
+  Rendered syncslide/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/syncslide.css?body=1" for 127.0.0.1 at 2014-07-13 14:17:48 +0900
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-13 14:17:48 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:48 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:48 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:48 +0900
+
+
+Started GET "/assets/syncslide.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:48 +0900
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:48 +0900
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:48 +0900
+
+
+Started GET "/assets/websocket_rails/abstract_connection.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:48 +0900
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:48 +0900
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:48 +0900
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:48 +0900
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:48 +0900
+
+
+Started GET "/assets/websocket_class.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:48 +0900
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-13 14:17:48 +0900
+
+
+Started GET "/websocket" for 127.0.0.1 at 2014-07-13 14:17:48 +0900
+
+
+Started GET "/syncslide" for 127.0.0.1 at 2014-07-13 14:18:05 +0900
+Processing by SyncslideController#index as HTML
+  Rendered syncslide/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 204ms (Views: 177.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/syncslide.css?body=1" for 127.0.0.1 at 2014-07-13 14:18:05 +0900
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-13 14:18:05 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-13 14:18:05 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-13 14:18:05 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-13 14:18:05 +0900
+
+
+Started GET "/assets/syncslide.js?body=1" for 127.0.0.1 at 2014-07-13 14:18:05 +0900
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2014-07-13 14:18:05 +0900
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2014-07-13 14:18:05 +0900
+
+
+Started GET "/assets/websocket_rails/abstract_connection.js?body=1" for 127.0.0.1 at 2014-07-13 14:18:05 +0900
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2014-07-13 14:18:06 +0900
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2014-07-13 14:18:06 +0900
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2014-07-13 14:18:06 +0900
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2014-07-13 14:18:06 +0900
+
+
+Started GET "/assets/websocket_class.js?body=1" for 127.0.0.1 at 2014-07-13 14:18:06 +0900
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-13 14:18:06 +0900
+
+
+Started GET "/websocket" for 127.0.0.1 at 2014-07-13 14:18:06 +0900
+
+
+Started GET "/syncslide" for 127.0.0.1 at 2014-07-13 14:18:25 +0900
+Processing by SyncslideController#index as HTML
+  Rendered syncslide/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 351ms (Views: 349.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/syncslide.css?body=1" for 127.0.0.1 at 2014-07-13 14:18:25 +0900
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-13 14:18:25 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-13 14:18:25 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-13 14:18:25 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-13 14:18:25 +0900
+
+
+Started GET "/assets/syncslide.js?body=1" for 127.0.0.1 at 2014-07-13 14:18:25 +0900
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2014-07-13 14:18:25 +0900
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2014-07-13 14:18:25 +0900
+
+
+Started GET "/assets/websocket_rails/abstract_connection.js?body=1" for 127.0.0.1 at 2014-07-13 14:18:25 +0900
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2014-07-13 14:18:25 +0900
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2014-07-13 14:18:25 +0900
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2014-07-13 14:18:25 +0900
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2014-07-13 14:18:25 +0900
+
+
+Started GET "/assets/websocket_class.js?body=1" for 127.0.0.1 at 2014-07-13 14:18:25 +0900
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-13 14:18:25 +0900
+
+
+Started GET "/websocket" for 127.0.0.1 at 2014-07-13 14:18:25 +0900
+Session Initialized
+
+call new_message: {"body"=>"hogehoge"}
+
+
+Started GET "/syncslide" for 127.0.0.1 at 2014-07-13 14:45:27 +0900
+Processing by SyncslideController#index as HTML
+  Rendered syncslide/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 485ms (Views: 460.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/syncslide.css?body=1" for 127.0.0.1 at 2014-07-13 14:45:28 +0900
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-13 14:45:28 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-13 14:45:28 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-13 14:45:28 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-13 14:45:28 +0900
+
+
+Started GET "/assets/syncslide.js?body=1" for 127.0.0.1 at 2014-07-13 14:45:28 +0900
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2014-07-13 14:45:28 +0900
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2014-07-13 14:45:28 +0900
+
+
+Started GET "/assets/websocket_rails/abstract_connection.js?body=1" for 127.0.0.1 at 2014-07-13 14:45:28 +0900
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2014-07-13 14:45:28 +0900
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2014-07-13 14:45:28 +0900
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2014-07-13 14:45:28 +0900
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2014-07-13 14:45:28 +0900
+
+
+Started GET "/assets/websocket_class.js?body=1" for 127.0.0.1 at 2014-07-13 14:45:28 +0900
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-13 14:45:28 +0900
+
+
+Started GET "/websocket" for 127.0.0.1 at 2014-07-13 14:45:29 +0900
+Session Initialized
+
+
+
+Started GET "/syncslide" for 127.0.0.1 at 2014-07-13 14:46:52 +0900
+Processing by SyncslideController#index as HTML
+  Rendered syncslide/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 130ms (Views: 104.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/syncslide.css?body=1" for 127.0.0.1 at 2014-07-13 14:46:53 +0900
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-13 14:46:53 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-13 14:46:53 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-13 14:46:53 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-13 14:46:53 +0900
+
+
+Started GET "/assets/syncslide.js?body=1" for 127.0.0.1 at 2014-07-13 14:46:53 +0900
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2014-07-13 14:46:53 +0900
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2014-07-13 14:46:53 +0900
+
+
+Started GET "/assets/websocket_rails/abstract_connection.js?body=1" for 127.0.0.1 at 2014-07-13 14:46:53 +0900
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2014-07-13 14:46:53 +0900
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2014-07-13 14:46:53 +0900
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2014-07-13 14:46:53 +0900
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2014-07-13 14:46:53 +0900
+
+
+Started GET "/assets/websocket_class.js?body=1" for 127.0.0.1 at 2014-07-13 14:46:53 +0900
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-13 14:46:53 +0900
+
+
+Started GET "/websocket" for 127.0.0.1 at 2014-07-13 14:46:53 +0900
+Session Initialized
+
+
+
+Started GET "/syncslide" for 127.0.0.1 at 2014-07-13 14:48:26 +0900
+Processing by SyncslideController#index as HTML
+  Rendered syncslide/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 383ms (Views: 353.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/syncslide.css?body=1" for 127.0.0.1 at 2014-07-13 14:48:26 +0900
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-13 14:48:26 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-13 14:48:26 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-13 14:48:26 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-13 14:48:26 +0900
+
+
+Started GET "/assets/syncslide.js?body=1" for 127.0.0.1 at 2014-07-13 14:48:26 +0900
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2014-07-13 14:48:26 +0900
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2014-07-13 14:48:26 +0900
+
+
+Started GET "/assets/websocket_rails/abstract_connection.js?body=1" for 127.0.0.1 at 2014-07-13 14:48:26 +0900
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2014-07-13 14:48:26 +0900
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2014-07-13 14:48:26 +0900
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2014-07-13 14:48:26 +0900
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2014-07-13 14:48:26 +0900
+
+
+Started GET "/assets/websocket_class.js?body=1" for 127.0.0.1 at 2014-07-13 14:48:27 +0900
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-13 14:48:27 +0900
+
+
+Started GET "/websocket" for 127.0.0.1 at 2014-07-13 14:48:27 +0900
+
+
+Started GET "/syncslide" for 127.0.0.1 at 2014-07-13 14:48:37 +0900
+Processing by SyncslideController#index as HTML
+  Rendered syncslide/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 136ms (Views: 107.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/syncslide.css?body=1" for 127.0.0.1 at 2014-07-13 14:48:37 +0900
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-13 14:48:37 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-13 14:48:37 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-13 14:48:37 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-13 14:48:37 +0900
+
+
+Started GET "/assets/syncslide.js?body=1" for 127.0.0.1 at 2014-07-13 14:48:37 +0900
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2014-07-13 14:48:37 +0900
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2014-07-13 14:48:37 +0900
+
+
+Started GET "/assets/websocket_rails/abstract_connection.js?body=1" for 127.0.0.1 at 2014-07-13 14:48:37 +0900
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2014-07-13 14:48:37 +0900
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2014-07-13 14:48:37 +0900
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2014-07-13 14:48:37 +0900
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2014-07-13 14:48:37 +0900
+
+
+Started GET "/assets/websocket_class.js?body=1" for 127.0.0.1 at 2014-07-13 14:48:37 +0900
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-13 14:48:37 +0900
+
+
+Started GET "/websocket" for 127.0.0.1 at 2014-07-13 14:48:37 +0900
+Session Initialized
+
+
+
+Started GET "/syncslide" for 127.0.0.1 at 2014-07-13 14:49:44 +0900
+Processing by SyncslideController#index as HTML
+  Rendered syncslide/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 131ms (Views: 105.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/syncslide.css?body=1" for 127.0.0.1 at 2014-07-13 14:49:44 +0900
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-13 14:49:44 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-13 14:49:44 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-13 14:49:44 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-13 14:49:44 +0900
+
+
+Started GET "/assets/syncslide.js?body=1" for 127.0.0.1 at 2014-07-13 14:49:44 +0900
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2014-07-13 14:49:44 +0900
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2014-07-13 14:49:44 +0900
+
+
+Started GET "/assets/websocket_rails/abstract_connection.js?body=1" for 127.0.0.1 at 2014-07-13 14:49:44 +0900
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2014-07-13 14:49:44 +0900
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2014-07-13 14:49:44 +0900
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2014-07-13 14:49:44 +0900
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2014-07-13 14:49:44 +0900
+
+
+Started GET "/assets/websocket_class.js?body=1" for 127.0.0.1 at 2014-07-13 14:49:44 +0900
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-13 14:49:44 +0900
+
+
+Started GET "/websocket" for 127.0.0.1 at 2014-07-13 14:49:44 +0900
+Session Initialized
+
+call new_message: {"body"=>"hogehoge"}
+call new_message: {"body"=>"hogehoge"}
+call new_message: {"body"=>"hogehoge"}
+call new_message: {"body"=>"hogehoge"}
