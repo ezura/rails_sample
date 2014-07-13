@@ -1,0 +1,2 @@
+module SyncslideHelper
+end
