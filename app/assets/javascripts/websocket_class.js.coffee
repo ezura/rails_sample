@@ -74,7 +74,7 @@ class @WebsocketClass
     target.val(message['content']['content'])
 
   lock: (message) =>
-    if (message['content']['sender_name'] == $('#user_name').val()) 
+    if (message.content.sender_name == $('#user_name').val()) 
       return
     target = message2id(message)
     target.attr('readonly', 'true')
