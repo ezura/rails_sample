@@ -39,6 +39,9 @@ GEM
     daemons (1.1.9)
     em-synchrony (1.0.3)
       eventmachine (>= 1.0.0.beta.1)
+    em-websocket (0.5.1)
+      eventmachine (>= 0.12.9)
+      http_parser.rb (~> 0.6.0)
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.2.1)
@@ -47,6 +50,7 @@ GEM
       websocket-driver (>= 0.3.1)
     hike (1.2.3)
     hiredis (0.5.2)
+    http_parser.rb (0.6.0)
     i18n (0.6.9)
     jbuilder (2.0.7)
       activesupport (>= 3.0.0, < 5)
@@ -139,6 +143,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  em-websocket
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.1.1)

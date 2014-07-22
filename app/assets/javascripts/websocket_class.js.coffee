@@ -24,8 +24,7 @@ class @WebsocketClass
     # サーバからの Push イベントのバインド
     # @dispatcher.bind 'controll', @controll
     @dispatcher.bind 'checkout', @checkout
-    @dispatcher.bind 'focus', @focus
-    @dispatcher.bind 'unfocus', @unfocus
+    @dispatcher.bind 'state', @state
     @dispatcher.bind 'modify', @modify
 
   requestCheckout: (event) =>
@@ -68,7 +67,7 @@ class @WebsocketClass
 
   addCommonMessage = (message) ->
     # meta 情報を付与
-    message['sender_name'] = $('#user_name').val()
+    message.sender_name = $('#user_name').val()
 
   # サーバから push されたデータを反映
   checkout: (message) =>
@@ -82,10 +81,10 @@ class @WebsocketClass
     action = message.content.state
     switch (action)
       when 'focus'
-        target.attr('selected', 'true')
+        target.addClass('focus');
         break
       when 'unfocus'
-        target.attr('selected', 'false')
+        target.removeClass("focus");
         break
 
   modify: (message) =>
