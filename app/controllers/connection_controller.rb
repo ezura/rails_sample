@@ -39,12 +39,8 @@ private
       broadcast :checkout, message
     end
 
-    def lock
-      broadcast :lock, message
-    end
-
-    def unlock
-      broadcast :unlock, message
+    def state
+      broadcast :state, message
     end
 
     def modify

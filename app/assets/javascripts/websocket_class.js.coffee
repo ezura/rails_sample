@@ -18,14 +18,14 @@ class @WebsocketClass
     $('#button').on 'click', @requestCheckout
     $('.edit').each (index, element) =>
       target = $('#'+element.id)
-      target.on 'focus', @requestLock
-      target.on 'blur', @requestUnlock
+      target.on 'focus', @requestFocus
+      target.on 'blur', @requestUnfocus
       target.on 'keyup', @requestModify
     # サーバからの Push イベントのバインド
     # @dispatcher.bind 'controll', @controll
     @dispatcher.bind 'checkout', @checkout
-    @dispatcher.bind 'lock', @lock
-    @dispatcher.bind 'unlock', @unlock
+    @dispatcher.bind 'focus', @focus
+    @dispatcher.bind 'unfocus', @unfocus
     @dispatcher.bind 'modify', @modify
 
   requestCheckout: (event) =>
@@ -37,21 +37,23 @@ class @WebsocketClass
     addCommonMessage message
     @dispatcher.trigger 'slide.checkout', message
 
-  requestLock: (event) =>
+  requestFocus: (event) =>
     message = {
       id: event.target.id,
+      state: 'focus'
     }
     # FIX_ME: まとめようとしたら、バインドのときにうまくいかなかった。要調査 #1
     addCommonMessage message
-    @dispatcher.trigger 'slide.lock', message
+    @dispatcher.trigger 'user.state', message
 
-  requestUnlock: (event) =>
+  requestUnfocus: (event) =>
     message = {
       id: event.target.id,
+      state: 'unfocus'
     }
     # FIX_ME: まとめようとしたら、バインドのときにうまくいかなかった。要調査 #1
     addCommonMessage message
-    @dispatcher.trigger 'slide.unlock', message
+    @dispatcher.trigger 'user.state', message
 
   requestModify: (event) =>
     message = {
@@ -71,24 +73,27 @@ class @WebsocketClass
   # サーバから push されたデータを反映
   checkout: (message) =>
     target = message2id(message)
-    target.val(message['content']['content'])
+    target.val(message.content.content)
 
-  lock: (message) =>
+  state: (message) =>
     if (message.content.sender_name == $('#user_name').val()) 
       return
     target = message2id(message)
-    target.attr('readonly', 'true')
-
-  unlock: (message) =>
-    target = message2id(message)
-    target.attr('readonly', 'false')
+    action = message.content.state
+    switch (action)
+      when 'focus'
+        target.attr('selected', 'true')
+        break
+      when 'unfocus'
+        target.attr('selected', 'false')
+        break
 
   modify: (message) =>
     target = message2id(message)
-    target.val(message['content']['content'])
+    target.val(message.content.content)
 
   message2id = (message) ->
-    $('#'+message['content']['id'])
+    $('#'+message.content.id)
 
 $ ->
   window.websocketClass = new WebsocketClass('localhost:3000/websocket')

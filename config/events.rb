@@ -18,17 +18,15 @@ WebsocketRails::EventMap.describe do
       :to => ConnectionController,
       :with_method => :checkout
 
-    subscribe :lock, 
-      :to => ConnectionController, 
-      :with_method => :lock
-
-    subscribe :unlock, 
-      :to => ConnectionController, 
-      :with_method => :unlock
-
     subscribe :modify,
       :to => ConnectionController,
       :with_method => :modify
+  end
+
+  namespace :user do
+    subscribe :state, 
+      :to => ConnectionController, 
+      :with_method => :state
   end
 end
 
