@@ -95,4 +95,4 @@ class @WebsocketClass
     $('#'+message.content.id)
 
 $ ->
-  window.websocketClass = new WebsocketClass('localhost:3000/websocket')
+  window.websocketClass = new WebsocketClass('localhost:3100/websocket')
