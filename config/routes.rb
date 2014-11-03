@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :versions
+
   get 'syncslide/index'
   get 'syncslide', to: 'syncslide#index'
 
