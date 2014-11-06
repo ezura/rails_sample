@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @document.content %>
+</p>
+
+<p>
+  <strong>Version:</strong>
+  <%= @document.version %>
+</p>
+
+<p>
+  <strong>Meta info:</strong>
+  <%= @document.meta_info %>
+</p>
+
+<%= link_to 'Edit', edit_document_path(@document) %> |
+<%= link_to 'Back', documents_path %>

@@ -69,6 +69,6 @@ class VersionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def version_params
-      params.require(:version).permit(:document_id, :content)
+      params.require(:version).permit(:document_id, :content, :commit_id)
     end
 end

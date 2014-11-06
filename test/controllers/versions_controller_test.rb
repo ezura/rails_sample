@@ -18,7 +18,7 @@ class VersionsControllerTest < ActionController::TestCase
 
   test "should create version" do
     assert_difference('Version.count') do
-      post :create, version: { content: @version.content, document_id: @version.document_id }
+      post :create, version: { commit_id: @version.commit_id, content: @version.content, document_id: @version.document_id }
     end
 
     assert_redirected_to version_path(assigns(:version))
@@ -35,7 +35,7 @@ class VersionsControllerTest < ActionController::TestCase
   end
 
   test "should update version" do
-    patch :update, id: @version, version: { content: @version.content, document_id: @version.document_id }
+    patch :update, id: @version, version: { commit_id: @version.commit_id, content: @version.content, document_id: @version.document_id }
     assert_redirected_to version_path(assigns(:version))
   end
 

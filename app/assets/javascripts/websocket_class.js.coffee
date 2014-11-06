@@ -12,6 +12,7 @@ class @WebsocketClass
   constructor: (url) ->
     # WebsocketRails::constructor: (@url, @use_websockets = true)
     @dispatcher = new WebSocketRails(url)
+    @version = 0
     @events()
  
   events: () =>
@@ -35,6 +36,7 @@ class @WebsocketClass
     # FIX_ME: まとめようとしたら、バインドのときにうまくいかなかった。要調査 #1
     addCommonMessage message
     @dispatcher.trigger 'slide.checkout', message
+    changeVersion(version)
 
   requestFocus: (event) =>
     message = {
@@ -90,9 +92,13 @@ class @WebsocketClass
   modify: (message) =>
     target = message2id(message)
     target.val(message.content.content)
+    this.changeVersion(++@version)
 
   message2id = (message) ->
     $('#'+message.content.id)
+
+  changeVersion: (version) =>
+    history.pushState(version, null, location.protocol+"://"+location.host+"/"+version)
 
 $ ->
   window.websocketClass = new WebsocketClass('localhost:3100/websocket')

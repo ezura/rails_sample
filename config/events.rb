@@ -21,6 +21,10 @@ WebsocketRails::EventMap.describe do
     subscribe :modify,
       :to => ConnectionController,
       :with_method => :modify
+
+    subscribe :snapshot,
+      :to => ConnectionController,
+      :with_method => :snapshot
   end
 
   namespace :user do
