@@ -3,9 +3,9 @@
 
 # author: Ezura
 # 参考:
-# https://github.com/websocket-rails/websocket-rails 
+# https://github.com/websocket-rails/websocket-rails
 # http://ithijikata.hatenablog.com/entry/2014/03/06/021948
-# 
+#
 # WebsocketRails を扱う拡張クラス
 
 class @WebsocketClass
@@ -14,7 +14,7 @@ class @WebsocketClass
     @dispatcher = new WebSocketRails(url)
     @version = 0
     @events()
- 
+
   events: () =>
     $('#button').on 'click', @requestCheckout
     $('.edit').each (index, element) =>
@@ -27,6 +27,7 @@ class @WebsocketClass
     @dispatcher.bind 'checkout', @checkout
     @dispatcher.bind 'state', @state
     @dispatcher.bind 'modify', @modify
+    # @dispatcher.bind 'snapshot', @modify
 
   requestCheckout: (event) =>
     message = {
@@ -77,7 +78,7 @@ class @WebsocketClass
     target.val(message.content.content)
 
   state: (message) =>
-    if (message.content.sender_name == $('#user_name').val()) 
+    if (message.content.sender_name == $('#user_name').val())
       return
     target = message2id(message)
     action = message.content.state
