@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20141106115609) do
 
   create_table "documents", force: true do |t|
     t.text     "content"
-    t.integer  "version",    null: false
+    t.integer  "version",    default: 0, null: false
     t.text     "meta_info"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20141106115609) do
 
   create_table "slides", force: true do |t|
     t.text     "resource"
-    t.integer  "revision",    default: 0, null: false
+    t.integer  "revision",                null: false
     t.integer  "resource_id", default: 0, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
