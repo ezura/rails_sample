@@ -11,30 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141106115609) do
-
-  create_table "documents", force: true do |t|
-    t.text     "content"
-    t.integer  "version",    default: 0, null: false
-    t.text     "meta_info"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "slides", force: true do |t|
-    t.text     "resource"
-    t.integer  "revision",                null: false
-    t.integer  "resource_id", default: 0, null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "versions", force: true do |t|
-    t.integer  "document_id"
-    t.text     "content"
-    t.integer  "commit_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20141113072318) do
 
 end
