@@ -11,10 +11,10 @@ WebsocketRails::EventMap.describe do
   #     subscribe :new, :to => ProductController, :with_method => :new_product
   #   end
   # The above will handle an event triggered on the client like `product.new`.
-  
+
   # puts self.inspect
   namespace :slide do
-    subscribe :checkout, 
+    subscribe :checkout,
       :to => ConnectionController,
       :with_method => :checkout
 
@@ -22,14 +22,14 @@ WebsocketRails::EventMap.describe do
       :to => ConnectionController,
       :with_method => :modify
 
-    subscribe :snapshot,
+    subscribe :version_did_update,
       :to => ConnectionController,
-      :with_method => :snapshot
+      :with_method => :version_did_update
   end
 
   namespace :user do
-    subscribe :state, 
-      :to => ConnectionController, 
+    subscribe :state,
+      :to => ConnectionController,
       :with_method => :state
   end
 end
@@ -43,7 +43,7 @@ WebsocketRails.setup do |config|
 
   # Uncomment to change the default log file path.
   # config.log_path = "#{Rails.root}/log/websocket_rails.log"
-  
+
   # Set to true if you wish to log the internal websocket_rails events
   # such as the keepalive `websocket_rails.ping` event.
   config.log_internal_events = true
