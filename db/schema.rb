@@ -11,13 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141113073918) do
+ActiveRecord::Schema.define(version: 20141120121057) do
 
   create_table "documents", force: true do |t|
-    t.integer  "version",    null: false
+    t.integer  "previous_version", default: 0, null: false
     t.text     "contents"
     t.text     "meta"
     t.text     "tmp"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "logs", force: true do |t|
+    t.integer  "document_id",      null: false
+    t.integer  "version",          null: false
+    t.text     "contents"
+    t.text     "meta"
+    t.integer  "previous_version", null: false
+    t.integer  "next_version",     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
