@@ -1,1 +1,1 @@
-json.extract! @version, :id, :document_id, :content, :commit_id, :created_at, :updated_at
+json.extract! @version, :id, :document_id, :version, :contents, :meta, :created_at, :updated_at
