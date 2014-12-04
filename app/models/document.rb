@@ -10,14 +10,14 @@ class Document < ActiveRecord::Base
 
   protected
     def save_log
-      prev_version = self.previous_version
+      previous_version = self.previous_version
       yield
       log = Log.create(
         document_id:      self.id,
         version:          self.previous_version,
         contents:         self.contents,
         meta:             self.meta,
-        previous_version: prev_version,
+        previous_version: previous_version,
         next_version:     self.version
       )
       # TODO: 保存できなかったときの例外処理
