@@ -14,9 +14,9 @@ class @WebsocketClass
     @dispatcher = new WebSocketRails(url)
     @version = 0
     @events()
+    console.log("ssss");
 
   events: () =>
-    $('#button').on 'click', @requestCheckout
     $('.edit').each (index, element) =>
       target = $('#'+element.id)
       target.on 'focus', @requestFocus
@@ -102,4 +102,4 @@ class @WebsocketClass
     history.pushState(version, null, location.protocol+"://"+location.host+"/"+version)
 
 $ ->
-  window.websocketClass = new WebsocketClass('localhost:3100/websocket')
+  window.websocket = new WebsocketClass('localhost:3100/websocket')
