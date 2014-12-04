@@ -2,3 +2,12 @@
 <%= render 'form' %>
 <%= link_to 'Show', @document %> |
 <%= link_to 'Back', documents_path %>
+
+<%= javascript_tag do %>
+  <!-- 方法１: resource の素を JS に渡して作る -->
+  // FIXME: raw って危ない？
+  window.resource_info = <%= raw @document.to_json_for_public_info %>;
+  console.log(window.resource_info);
+<% end %>
+
+<%= javascript_include_tag '/websocket_class' %>
