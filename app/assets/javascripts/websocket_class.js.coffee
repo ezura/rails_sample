@@ -13,8 +13,6 @@ class @WebsocketClass
     # WebsocketRails::constructor: (@url, @use_websockets = true)
     @dispatcher = new WebSocketRails(url)
     @version = 0
-    @events()
-    console.log("ssss");
 
   events: () =>
     $('.edit').each (index, element) =>
