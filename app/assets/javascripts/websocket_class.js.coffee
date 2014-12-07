@@ -15,8 +15,8 @@ class @WebsocketClass
     @version = 0
 
   events: () =>
-    $('.edit').each (index, element) =>
-      target = $('#'+element.id)
+    $('.ws-object').each (index, element) =>
+      target = $(element)
       target.on 'focus', @requestFocus
       target.on 'blur', @requestUnfocus
       target.on 'keyup', @requestModify
@@ -29,7 +29,7 @@ class @WebsocketClass
 
   requestCheckout: (event) =>
     message = {
-      id: event.target.id,
+      id: $(event.target).attr("ws-object-id"),
       content: event.target.id
     }
     # FIX_ME: まとめようとしたら、バインドのときにうまくいかなかった。要調査 #1
@@ -39,7 +39,7 @@ class @WebsocketClass
 
   requestFocus: (event) =>
     message = {
-      id: event.target.id,
+      id: $(event.target).attr("ws-object-id"),
       state: 'focus'
     }
     # FIX_ME: まとめようとしたら、バインドのときにうまくいかなかった。要調査 #1
@@ -48,7 +48,7 @@ class @WebsocketClass
 
   requestUnfocus: (event) =>
     message = {
-      id: event.target.id,
+      id: $(event.target).attr("ws-object-id"),
       state: 'unfocus'
     }
     # FIX_ME: まとめようとしたら、バインドのときにうまくいかなかった。要調査 #1
@@ -57,9 +57,9 @@ class @WebsocketClass
 
   requestModify: (event) =>
     message = {
-      id: event.target.id,
+      id: $(event.target).attr("ws-object-id"),
       # ???: event.target を jQuery のオブジェクトにしてからしか内容とれない？
-      content: $('#'+event.target.id).val()
+      content: $(event.target).val()
     }
     # FIX_ME: まとめようとしたら、バインドのときにうまくいかなかった。要調査 #1
     addCommonMessage message
@@ -94,10 +94,8 @@ class @WebsocketClass
     this.changeVersion(++@version)
 
   message2id = (message) ->
-    $('#'+message.content.id)
+    console.log(message);
+    $("[ws-object-id=" + message.content.id + "]")
 
   changeVersion: (version) =>
     history.pushState(version, null, location.protocol+"://"+location.host+"/"+version)
-
-$ ->
-  window.websocket = new WebsocketClass('localhost:3100/websocket')

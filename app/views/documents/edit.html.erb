@@ -5,14 +5,15 @@
 
 <div id="contents"></div>
 
+<%= javascript_include_tag '/assets/restful_websocket' %>
 <%= javascript_include_tag '/assets/resource' %>
 <%= javascript_include_tag '/assets/websocket_class' %>
 
 <%= javascript_tag do %>
-  <!-- 方法１: resource の素を JS に渡して作る -->
-  // FIXME: raw って危ない？
-  // TODO: オブジェクトをハンドルしてくれる class つくる
-  window.resource_info = new Resource(<%= raw @document.to_json_for_public_info %>);
-  window.resource_info.generate();
-  window.websocket.events;
+  $(function(){
+    <!-- 方法１: resource の素を JS に渡して作る -->
+    // FIXME: raw って危ない？
+    // TODO: オブジェクトをハンドルしてくれる class つくる
+    window.ws_resource = new RestfulWebScoket(<%= raw @document.to_json_for_public_info %>);
+  });
 <% end %>

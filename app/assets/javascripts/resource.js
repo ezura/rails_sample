@@ -19,7 +19,7 @@ Resource = function(info) {
 Resource.prototype = {
   generate: function() {
     for(var objectId in this.contents) {
-      $('<textarea class="edit" object-id="' + objectId + '">' + this.contents[objectId] + "</textarea>").appendTo('#contents');
+      $('<textarea class="ws-object" ws-object-id="' + objectId + '">' + this.contents[objectId] + "</textarea>").appendTo('#contents');
     }
   },
   patch: function(info) {
