@@ -5,7 +5,7 @@ one:
   version: 1
   contents: MyText
   meta: MyText
-  previous_version: 1
+  version_name: "name1"
   next_version: 1
 
 two:
@@ -13,5 +13,5 @@ two:
   version: 1
   contents: MyText
   meta: MyText
-  previous_version: 1
+  version_name: "name2"
   next_version: 1

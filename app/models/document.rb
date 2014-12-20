@@ -5,22 +5,22 @@ class Document < ActiveRecord::Base
   public
   #TODO: フレームワーク化するとき残しそう (結局全部 Public になったけど、今後の拡張で変わるかもなので今はこのままで)
     def to_json_for_public_info
-      self.to_json(:only => [:document_id, :version, :contents, :meta, :previous_version, :next_version])
+      self.to_json(:only => [:document_id, :version, :contents, :meta, :version_name])
     end
 
   protected
     def save_log
-      previous_version = self.previous_version
+      version = self.version + 1
       yield
       log = Log.create(
         document_id:      self.id,
-        version:          self.previous_version,
+        version:          version,
         contents:         self.contents,
         meta:             self.meta,
-        previous_version: previous_version,
-        next_version:     self.version
+        version_name:     "log" + "_" + version.to_s
       )
-      # TODO: 保存できなかったときの例外処理
+      # TODO: 保存できなかったときの例外処理 (可能性としては、保存する前に新しいログの保存要求がきて、
+      # version の unique 制約にひっかかるなど)
       logger.debug(log)
     end
 end

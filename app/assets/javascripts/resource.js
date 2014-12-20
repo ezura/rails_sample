@@ -9,9 +9,7 @@ Resource = function(info) {
     this.version = info.version;
     this.contents = $.parseJSON(info.contents);
     this.meta = info.meta;
-    this.previous_version = ("previous_version" in info) ? info.previous_version : null;
-
-    this.next_version = ("next_version" in info) ? next_version : null;
+    this.version_name = info.version_name;
     this.tmp =  ("tmp" in info) ? info.tmp : null;
 
 }
@@ -24,6 +22,6 @@ Resource.prototype = {
   },
   patch: function(info) {
     // TODO: log からの情報に従って パッチを当てる (実装によっては進むか戻るかによって処理違なるはず)
-
+    // !!!: 優先順位的に高くない
   }
 }
