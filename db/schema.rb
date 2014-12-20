@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141122033515) do
+ActiveRecord::Schema.define(version: 20141220093742) do
 
   create_table "documents", force: true do |t|
     t.integer  "previous_version", default: 0, null: false
@@ -24,14 +24,15 @@ ActiveRecord::Schema.define(version: 20141122033515) do
   end
 
   create_table "logs", force: true do |t|
-    t.integer  "document_id",      null: false
-    t.integer  "version",          null: false
+    t.integer  "document_id",  null: false
+    t.integer  "version",      null: false
     t.text     "contents"
     t.text     "meta"
-    t.integer  "previous_version", null: false
-    t.integer  "next_version",     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "version_name"
   end
+
+  add_index "logs", ["version_name"], name: "index_logs_on_version_name"
 
 end
