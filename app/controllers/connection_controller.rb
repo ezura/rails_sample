@@ -4,6 +4,10 @@ class ConnectionController < WebsocketRails::BaseController
         logger.debug("Session Initialized\n")
     end
 
+    def connect_user
+      logger.debug("connected user")
+    end
+
     def checkout
       broadcast :checkout, message
     end
@@ -32,7 +36,8 @@ private
           content: content
           # TODO: meta 情報を入れるかも
         }
-        logger.debug("broadcast: #{message}")
+        puts("broadcast: #{message}")
+        WebsocketRails["#{content["resource_id"]}".to_sym].trigger(method, message)
         broadcast_message method, message
     end
 

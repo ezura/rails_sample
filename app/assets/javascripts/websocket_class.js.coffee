@@ -13,6 +13,16 @@ class @WebsocketClass
     # WebsocketRails::constructor: (@url, @use_websockets = true)
     @dispatcher = new WebSocketRails(url)
     @version = 0
+    @resource_id = this.resourceId()
+    # TODO: 型調べる
+    @channel = @dispatcher.subscribe(@resource_id);
+    console.log(@resource_id)
+
+  resourceId: () ->
+    parser = document.createElement('a');
+    parser.href = location.href;
+    paths = parser.pathname.split "/";
+    paths[2]
 
   events: () =>
     $('.ws-object').each (index, element) =>
@@ -21,11 +31,11 @@ class @WebsocketClass
       target.on 'blur', @requestUnfocus
       target.on 'keyup', @requestModify
     # サーバからの Push イベントのバインド
-    # @dispatcher.bind 'controll', @controll
-    @dispatcher.bind 'checkout', @checkout
-    @dispatcher.bind 'state', @state
-    @dispatcher.bind 'modify', @modify
-    # @dispatcher.bind 'snapshot', @modify
+    @dispatcher.bind 'controll', @controll
+    @channel.bind 'checkout', @checkout
+    @channel.bind 'state', @state
+    @channel.bind 'modify', @modify
+    # @channel.bind 'snapshot', @modify
 
   requestCheckout: (event) =>
     message = {
@@ -33,7 +43,7 @@ class @WebsocketClass
       content: event.target.id
     }
     # FIX_ME: まとめようとしたら、バインドのときにうまくいかなかった。要調査 #1
-    addCommonMessage message
+    this.addCommonMessage message
     @dispatcher.trigger 'slide.checkout', message
     changeVersion(version)
 
@@ -43,7 +53,7 @@ class @WebsocketClass
       state: 'focus'
     }
     # FIX_ME: まとめようとしたら、バインドのときにうまくいかなかった。要調査 #1
-    addCommonMessage message
+    this.addCommonMessage message
     @dispatcher.trigger 'user.state', message
 
   requestUnfocus: (event) =>
@@ -52,7 +62,7 @@ class @WebsocketClass
       state: 'unfocus'
     }
     # FIX_ME: まとめようとしたら、バインドのときにうまくいかなかった。要調査 #1
-    addCommonMessage message
+    this.addCommonMessage message
     @dispatcher.trigger 'user.state', message
 
   requestModify: (event) =>
@@ -62,13 +72,17 @@ class @WebsocketClass
       content: $(event.target).val()
     }
     # FIX_ME: まとめようとしたら、バインドのときにうまくいかなかった。要調査 #1
-    addCommonMessage message
+    this.addCommonMessage message
     console.log message
     @dispatcher.trigger 'slide.modify', message
 
-  addCommonMessage = (message) ->
+  addCommonMessage: (message) =>
     # meta 情報を付与
     message.sender_name = $('#user_name').val()
+    message.resource_id = @resource_id
+
+  controll: (message) =>
+    target = message2id(message)
 
   # サーバから push されたデータを反映
   checkout: (message) =>
@@ -98,4 +112,4 @@ class @WebsocketClass
     $("[ws-object-id=" + message.content.id + "]")
 
   changeVersion: (version) =>
-    history.pushState(version, null, location.protocol+"://"+location.host+"/"+version)
+    # history.pushState(version, null, location.protocol+"://"+location.host+"/"+version)
