@@ -19,6 +19,7 @@ class ConnectionController < WebsocketRails::BaseController
     def modify
       resource_info = message
       create_new_version(resource_info) if create_new_version?
+      save_resource(resource_info)
       broadcast :modify, message
     end
 
@@ -41,6 +42,17 @@ private
         puts("broadcast: #{message}")
         WebsocketRails["#{content["resource_id"]}".to_sym].trigger(method, message)
         # broadcast_message method, message
+    end
+
+    def save_resource(resource_info)
+      # FIXME: hash に格納して毎回検索しないようにする (ただし、なにも対策しないと分散DBの時に問題あるかも)
+      document = Document.find_by(id: resource_info["resource_id"].to_i)
+
+      log = Log.find_by(document_id: resource_info["resource_id"], version: document.version)
+      # logger.debug(log)
+      # log.update_attribute = {contents: resource_info["content"]}
+      log.contents = resource_info["content"]
+      log.save
     end
 
     # バージョンを新しく作るか
