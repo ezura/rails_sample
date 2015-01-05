@@ -1,6 +1,6 @@
 class Document < ActiveRecord::Base
   # version が更新されたら log にデータコピー
-  around_save :save_log
+  # around_save :save_log
 
   public
   #TODO: フレームワーク化するとき残しそう (結局全部 Public になったけど、今後の拡張で変わるかもなので今はこのままで)
