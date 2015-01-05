@@ -49,8 +49,6 @@ private
       document = Document.find_by(id: resource_info["resource_id"].to_i)
 
       log = Log.find_by(document_id: resource_info["resource_id"], version: document.version)
-      # logger.debug(log)
-      # log.update_attribute = {contents: resource_info["content"]}
       log.contents = resource_info["content"]
       log.save
     end
