@@ -18,7 +18,7 @@ class ConnectionController < WebsocketRails::BaseController
 
     def modify
       resource_info = message
-      create_new_version(resource_info) if create_new_version?
+      create_new_version(resource_info) if create_new_version?(resource_info)
       save_resource(resource_info)
       broadcast :modify, message
     end
@@ -54,9 +54,10 @@ private
     end
 
     # バージョンを新しく作るか
-    def create_new_version?()
+    def create_new_version?(resource_info)
       # TODO: 判定
-      true
+      resource_info["content"].length % 10 == 0
+
     end
 
     def new_version_name(document)
@@ -86,8 +87,4 @@ private
         logger.debug("error: create_new_version #{document}")
       end
     end
-end
-
-class DocumentTao
-
 end
