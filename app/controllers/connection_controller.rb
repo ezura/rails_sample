@@ -47,9 +47,19 @@ private
     def save_resource(resource_info)
       # FIXME: hash に格納して毎回検索しないようにする (ただし、なにも対策しないと分散DBの時に問題あるかも)
       document = Document.find_by(id: resource_info["resource_id"].to_i)
-
-      log = Log.find_by(document_id: resource_info["resource_id"], version: document.version)
-      log.contents = resource_info["content"]
+      puts resource_info["resource_id"]
+      puts document.version
+      log = Log.find_or_create_by(document_id: resource_info["resource_id"].to_i, version: document.version)
+      puts log.version
+      puts log
+      contents = ActiveSupport::JSON.decode(log.contents)
+      puts log.contents
+      puts "-----"
+      puts contents
+      contents[resource_info["id"]] = resource_info["content"]
+      puts contents
+      log.contents = contents.to_json
+      # log.contents = "{\"team\":\"rails\",\"players\":\"36\"}"
       log.save
     end
 
@@ -62,7 +72,7 @@ private
 
     def new_version_name(document)
       # TODO: 名前指定
-      document.version.to_s
+      "version-#{document.version.to_s}"
     end
 
     def create_new_version(resource_info)
@@ -75,8 +85,10 @@ private
             old_log.version_name = new_version_name(document)
             old_log.save!
 
+            # TODO: contents の内容
             new_log = Log.new(document_id: document.id,
-                              version: document.version+1)
+                              version: document.version+1,
+                              contents: old_log.contents)
             new_log.save!
           }
           document.version += 1
@@ -86,5 +98,7 @@ private
         # TODO: エラーハンドリング
         logger.debug("error: create_new_version #{document}")
       end
+
+      puts "create_new_version"
     end
 end
