@@ -1,0 +1,16 @@
+<h1>Editing document</h1>
+
+<div id="contents"></div>
+
+<%= javascript_include_tag '/assets/restful_websocket' %>
+<%= javascript_include_tag '/assets/resource' %>
+<%= javascript_include_tag '/assets/websocket_class' %>
+
+<%= javascript_tag do %>
+  $(function(){
+    <!-- 方法１: resource の素を JS に渡して作る -->
+    // FIXME: raw って危ない？
+    // TODO: オブジェクトをハンドルしてくれる class つくる
+    window.ws_resource = new RestfulWebSocket(<%= raw @log.to_json_for_public_info %>);
+  });
+<% end %>

@@ -1,5 +1,5 @@
 class DocumentsController < ApplicationController
-  before_action :set_document, only: [:show, :edit, :update, :destroy]
+  before_action :set_document, only: [:show, :edit, :update, :destroy, :head, :history]
 
   # GET /documents
   # GET /documents.json
@@ -59,6 +59,14 @@ class DocumentsController < ApplicationController
       format.html { redirect_to documents_url, notice: 'Document was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def head
+    @log = Log.find_by(document_id: @document.id, version: @document.version)
+  end
+
+  def history
+    @log = Log.find_by(document_id: @document.id, version: params[:version])
   end
 
   private

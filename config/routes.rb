@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-  resources :documents
+  # resources :documents
 
   resources :versions
 
   get 'syncslide/index'
   get 'syncslide', to: 'syncslide#index'
+
+  get 'documents/:id', to: 'documents#head'
+  get 'documents/:id/:version', to: 'documents#history'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
