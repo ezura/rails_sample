@@ -62,11 +62,15 @@ class DocumentsController < ApplicationController
   end
 
   def head
-    @log = Log.find_by(document_id: @document.id, version: @document.version)
+    @log = Log.find_by(document_id: @document.id, version: @document.versio)
+    # TODO: マージしたりする処理
+    @resource = @log
   end
 
   def history
-    @log = Log.find_by(document_id: @document.id, version: params[:version])
+    @log = Log.find_by(document_id: @document.id, version_name: params[:version_name])
+    # TODO: マージしたりする処理
+    @resource = @log
   end
 
   private

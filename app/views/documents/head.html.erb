@@ -1,3 +1,9 @@
+<!-- FIXME: head と history 両方にある -->
+<% content_for :resource_link do %>
+<link rel="prev" href= <%= @resource.previous_version_name() %> />
+<!-- <link rel="next" href= <%= @resource.next_version_name() %> /> -->
+<% end %>
+
 <h1>Editing document</h1>
 
 <div id="contents"></div>
@@ -10,7 +16,6 @@
   $(function(){
     <!-- 方法１: resource の素を JS に渡して作る -->
     // FIXME: raw って危ない？
-    // TODO: オブジェクトをハンドルしてくれる class つくる
-    window.ws_resource = new RestfulWebSocket(<%= raw @log.to_json_for_public_info %>);
+    window.ws_resource = new RestfulWebSocket(<%= raw @resource.to_json_for_public_info %>);
   });
 <% end %>
