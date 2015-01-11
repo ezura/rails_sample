@@ -62,8 +62,9 @@ class DocumentsController < ApplicationController
   end
 
   def head
-    @log = Log.find_by(document_id: @document.id, version: @document.versio)
+    @log = Log.find_by(document_id: @document.id, version: @document.version)
     # TODO: マージしたりする処理
+    logger.debug("head: log: #{@log.version}")
     @resource = @log
   end
 

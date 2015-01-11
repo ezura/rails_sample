@@ -1,7 +1,6 @@
 <!-- FIXME: head と history 両方にある -->
 <% content_for :resource_link do %>
-<link rel="prev" href= <%= @resource.previous_version_name() %> />
-<!-- <link rel="next" href= <%= @resource.next_version_name() %> /> -->
+<link rel="prev" href="<%= @resource.uri_for_version(@resource.previous_version_name()) %>" />
 <% end %>
 
 <h1>Editing document</h1>
