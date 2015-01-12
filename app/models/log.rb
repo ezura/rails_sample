@@ -5,7 +5,7 @@ class Log < ActiveRecord::Base
   end
 
   def previous_version_name
-    return nil if self.version == 0
+    return "" if self.version == 0
 
     previous_version = Log.select(:version_name).where("document_id = #{self.document_id} and version = #{self.version-1}").limit(1).first
     puts previous_version.version_name
