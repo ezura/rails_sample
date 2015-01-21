@@ -29,15 +29,16 @@ var RestfulWebSocket
     elmPrev.innerHTML = '&lt; Previous ';
     elmNext.innerHTML = 'Next &gt;';
 
-    addClicker(elmPrev);
-    addClicker(elmNext);
+    elmPrev.addEventListener("click", function(e) {
+      // TODO: ws で差分とってきて反映
+      history.pushState(null, null, $("head>link[rel='prev']").attr("href"));
+      e.preventDefault();
+    }, false);
 
-    function addClicker(link) {
-      link.addEventListener("click", function(e) {
-        // TODO: ws で差分とってきて反映
-        history.pushState(null, null, link.id /* TODO: version name */);
-        e.preventDefault();
-      }, false);
-    }
+    elmNext.addEventListener("click", function(e) {
+      // TODO: ws で差分とってきて反映
+      history.pushState(null, null, $("head>link[rel='next']").attr("href"));
+      e.preventDefault();
+    }, false);
   }
 })();

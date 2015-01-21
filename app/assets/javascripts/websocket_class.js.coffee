@@ -35,6 +35,7 @@ class @WebsocketClass
     @channel.bind 'checkout', @checkout
     @channel.bind 'state', @state
     @channel.bind 'modify', @modify
+    @channel.bind 'push_version', @pushVersion
     # @channel.bind 'snapshot', @modify
 
   requestCheckout: (event) =>
@@ -106,6 +107,11 @@ class @WebsocketClass
     target = message2id(message)
     target.val(message.content.content)
     this.changeVersion(++@version)
+
+  pushVersion: (message) =>
+    console.log(message)
+    history.replaceState({ foo : "bar"}, message, location.href+"/"+message)
+    history.pushState({ foo : "bar"}, "head", "　")
 
   message2id = (message) ->
     console.log(message);

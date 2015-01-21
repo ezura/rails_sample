@@ -23,7 +23,7 @@ class ConnectionController < WebsocketRails::BaseController
       broadcast :modify, message
     end
 
-    def update_version(varsion)
+    def update_version(resource)
       body = varsion
       content = {
         head: "",
@@ -31,6 +31,11 @@ class ConnectionController < WebsocketRails::BaseController
       }
       broadcast :update_version, content
       # TODO: 振り分け
+    end
+
+    def self.notify_named_version(id, version_name)
+      puts "--notify_create_version: #{id}, #{version_name}"
+      WebsocketRails[id.to_s.to_sym].trigger(:push_version, version_name)
     end
 
 private
@@ -93,6 +98,9 @@ private
           }
           document.version += 1
           document.save!
+
+          # # TODO: DB のところでやる
+          # WebsocketRails[resource_info["resource_id"].to_sym].trigger(:push_version, document.version)
         }
       rescue
         # TODO: エラーハンドリング

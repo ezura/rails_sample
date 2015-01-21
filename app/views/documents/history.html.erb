@@ -16,6 +16,7 @@
   $(function(){
     <!-- 方法１: resource の素を JS に渡して作る -->
     // FIXME: raw って危ない？
+    // FIXME: input にする
     window.ws_resource = new RestfulWebSocket(<%= raw @resource.to_json_for_public_info %>);
   });
 <% end %>
