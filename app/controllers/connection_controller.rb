@@ -9,7 +9,8 @@ class ConnectionController < WebsocketRails::BaseController
     end
 
     def checkout
-      broadcast :checkout, message
+      info = Document.resource_by_id_and_version_name(message["resource_id"], message["version_name"])
+      broadcast :checkout, info
     end
 
     def state

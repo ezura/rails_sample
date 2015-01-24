@@ -77,6 +77,16 @@ class @WebsocketClass
     console.log message
     @dispatcher.trigger 'slide.modify', message
 
+  requestCheckout: (resource_id, version_name) =>
+    # path = location.pathname.split("/");
+    message = {
+      version_name: version_name,
+      resource_id: resource_id
+    }
+    this.addCommonMessage message
+    console.log message
+    @dispatcher.trigger 'slide.checkout', message
+
   addCommonMessage: (message) =>
     # meta 情報を付与
     message.sender_name = $('#user_name').val()
@@ -87,8 +97,7 @@ class @WebsocketClass
 
   # サーバから push されたデータを反映
   checkout: (message) =>
-    target = message2id(message)
-    target.val(message.content.content)
+    console.log(message)
 
   state: (message) =>
     if (message.content.sender_name == $('#user_name').val())
@@ -110,8 +119,9 @@ class @WebsocketClass
 
   pushVersion: (message) =>
     console.log(message)
-    history.replaceState({ foo : "bar"}, message, location.href+"/"+message)
-    history.pushState({ foo : "bar"}, "head", "　")
+    basePath = "/documents/" + @resource_id + "/"
+    history.replaceState({ foo : "bar"}, message, basePath + message)
+    history.pushState({ foo : "bar"}, "head", basePath)
 
   message2id = (message) ->
     console.log(message);
