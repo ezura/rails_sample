@@ -9,8 +9,9 @@ class ConnectionController < WebsocketRails::BaseController
     end
 
     def checkout
+      puts message
       info = Document.resource_by_id_and_version_name(message["resource_id"], message["version_name"])
-      broadcast :checkout, info
+      WebsocketRails[message["resource_id"].to_sym].trigger(:checkout, info)
     end
 
     def state

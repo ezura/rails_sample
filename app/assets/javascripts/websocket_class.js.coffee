@@ -15,8 +15,16 @@ class @WebsocketClass
     @version = 0
     @resource_id = this.resourceId()
     # TODO: 型調べる
-    @channel = @dispatcher.subscribe(@resource_id);
+    @channel = @dispatcher.subscribe(@resource_id)
     console.log(@resource_id)
+
+    # window.addEventListener("popstate", (e)=> @onPopstate(e))
+    $(window).on 'popstate', @onPopstate
+
+  onPopstate: (event) =>
+    console.log event.originalEvent.state
+    state = event.originalEvent.state
+    this.requestCheckout(@resource_id, state.versionName)
 
   resourceId: () ->
     parser = document.createElement('a');
@@ -40,8 +48,8 @@ class @WebsocketClass
 
   requestCheckout: (event) =>
     message = {
-      id: $(event.target).attr("ws-object-id"),
-      content: event.target.id
+      id: event.id,
+      version_name: event.versionName
     }
     # FIX_ME: まとめようとしたら、バインドのときにうまくいかなかった。要調査 #1
     this.addCommonMessage message
@@ -83,7 +91,6 @@ class @WebsocketClass
       version_name: version_name,
       resource_id: resource_id
     }
-    this.addCommonMessage message
     console.log message
     @dispatcher.trigger 'slide.checkout', message
 
@@ -97,7 +104,11 @@ class @WebsocketClass
 
   # サーバから push されたデータを反映
   checkout: (message) =>
-    console.log(message)
+    console.log("checkout: " + message)
+    documentInfo = $.parseJSON(message)
+    contents = $.parseJSON(documentInfo.contents)
+    console.log contents
+    window.ws_resource.resource.patch(contents)
 
   state: (message) =>
     if (message.content.sender_name == $('#user_name').val())
@@ -118,10 +129,10 @@ class @WebsocketClass
     this.changeVersion(++@version)
 
   pushVersion: (message) =>
-    console.log(message)
+    console.log("pushVersion")
     basePath = "/documents/" + @resource_id + "/"
-    history.replaceState({ foo : "bar"}, message, basePath + message)
-    history.pushState({ foo : "bar"}, "head", basePath)
+    history.replaceState({ versionName : message }, message, basePath + message)
+    history.pushState({ foo : "bar"}, "", basePath)
 
   message2id = (message) ->
     console.log(message);

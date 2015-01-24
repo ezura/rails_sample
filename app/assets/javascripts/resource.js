@@ -23,5 +23,11 @@ Resource.prototype = {
   patch: function(info) {
     // TODO: log からの情報に従って パッチを当てる (実装によっては進むか戻るかによって処理違なるはず)
     // !!!: 優先順位的に高くない
+    console.log("---------")
+    console.log(info)
+    $('#contents').empty()
+    for(var objectId in info) {
+      $('<textarea class="ws-object" ws-object-id="' + objectId + '">' + info[objectId] + "</textarea>").appendTo('#contents');
+    }
   }
 }

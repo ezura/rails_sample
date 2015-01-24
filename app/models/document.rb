@@ -7,8 +7,7 @@ class Document < ActiveRecord::Base
 
   public
     def self.resource_by_id_and_version_name(id, version_name)
-      log = Log.find_by(document_id: id, version_name: version).to_json_for_public_info(:include => true)
-      puts log
+      Log.find_by(document_id: id, version_name: version_name).to_json_for_public_info(:include => true)
     end
 
   #TODO: フレームワーク化するとき残しそう (結局全部 Public になったけど、今後の拡張で変わるかもなので今はこのままで)
